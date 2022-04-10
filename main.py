@@ -210,15 +210,15 @@ def main(
         for p in model.parameters():
             p.grad.data.mul_(1.0 / meta_bsz).add_(p.data)
         opt.step()
-    plt.xlim(0, iterations)
+    plt.xlim(0, 100)
     plt.ylim(0.2, 1)
-    x_major_locator = MultipleLocator(1000)
+    x_major_locator = MultipleLocator(10)
     y_major_locator = MultipleLocator(0.1)
     ax = plt.gca()
     ax.xaxis.set_major_locator(x_major_locator)
     ax.yaxis.set_major_locator(y_major_locator)
     plt.plot(test_inner_accuracies,)
-    plt.xlabel("iteration")
+    plt.xlabel("iteration/bsz")
     plt.ylabel("test_accuracy")
     plt.savefig('save.jpg')
 
