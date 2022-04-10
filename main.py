@@ -59,7 +59,7 @@ def main(
         test_bsz=15,
         train_steps=8,
         test_steps=50,
-        iterations=1000,
+        iterations=10000,
         test_interval=100,
         save='',
         cuda=1,
